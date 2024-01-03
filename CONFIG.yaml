@@ -1,0 +1,25 @@
+steps:
+  - type: filter
+    parameters:
+      inputs:
+      - WikiMatrix.en-ru.en
+      - WikiMatrix.en-ru.ru
+      outputs:
+      - filtered_en.txt
+      - filtered_ru.txt
+      filters:
+        - CountSentensesFilter:
+            unit: word
+          module: my_filters
+        - CountWordsFilter:
+            unit: word
+          module: my_filters
+        - QuotationMarkFilter:
+            unit: word
+          module: my_filters
+        - AngularQuotesFilter:
+            unit: word
+          module: my_filters
+        - NoTranslationFilter:
+            unit: word
+          module: my_filters
